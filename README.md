@@ -1,14 +1,14 @@
-# <img src="https://raw.githubusercontent.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/refs/heads/main/yggapi.ico" height="32" alt="YggTorrent Icon"></img> YggAPI qBittorrent Search Plugin
+# <img src="https://raw.githubusercontent.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/main/yggapi.ico" height="32" alt="YggTorrent Icon"></img> YggAPI qBittorrent Search Plugin
 
 This [qBittorrent](https://github.com/qbittorrent/qBittorrent) Search Plugin uses [YggAPI](https://yggapi.eu), a non-official [YggTorrent](https://www.ygg.re) search database.
 
-![Demo GIF](https://raw.githubusercontent.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/refs/heads/main/demo.gif)
+![Demo GIF](https://raw.githubusercontent.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/main/demo.gif)
 
 ## Installation
 
-1. Download the plugin file: [yggapi.py](https://github.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/blob/main/yggapi.py#L12)
+1. Download the plugin file: [yggapi.py](https://github.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/blob/main/yggapi.py#L13)
 
-2. Replace the `passkey` value on [line 12](https://github.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/blob/main/yggapi.py#L12) with your [YggTorrent Passkey](https://www.ygg.re/user/account) _(required for downloading)_
+2. Replace the `passkey` value on [line 13](https://github.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/blob/main/yggapi.py#L13) with your [YggTorrent Passkey](https://www.ygg.re/user/account) _(required for downloading)_
 
 Then, in qBittorrent:
 
