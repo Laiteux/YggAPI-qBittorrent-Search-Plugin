@@ -1,4 +1,4 @@
-#VERSION: 1.0
+#VERSION: 1.1
 #AUTHORS: Laiteux (matt@laiteux.dev)
 
 import json
@@ -9,6 +9,7 @@ from novaprinter import prettyPrinter
 class yggapi(object):
     name = "YggAPI"
     url = "https://yggapi.eu"
+    ygg_url = "https://www.ygg.re"
     passkey = "YOUR_PASSKEY_HERE" # https://www.ygg.re/user/account
 
     supported_categories = {
@@ -16,6 +17,13 @@ class yggapi(object):
         "movies": "2183",
         "tv": "2184",
         "anime": "2179"
+    }
+
+    ygg_categories = {
+        "2183": "film",
+        "2184": "série-tv",
+        "2178": "animation",
+        "2179": "animation-série"
     }
 
     def __init__(self):
@@ -47,7 +55,7 @@ class yggapi(object):
                     "seeds": torrent["seeders"],
                     "leech": torrent["leechers"],
                     "engine_url": self.url,
-                    "desc_link": f"{self.url}/torrent/{torrent['id']}",
+                    "desc_link": f"{self.ygg_url}/torrent/filmvidéo/{self.ygg_categories[str(torrent['category_id'])]}/{torrent['id']}-{torrent['slug']}",
                     "pub_date": int(datetime.strptime(torrent["uploaded_at"], "%Y-%m-%dT%H:%M:%S%z").timestamp())
                 }
 
