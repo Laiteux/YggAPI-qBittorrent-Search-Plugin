@@ -19,7 +19,7 @@ Then, in qBittorrent:
 Or, manually copy the `yggapi.py` & `yggapi.ico` files to the following location:
 
 - Windows: `%localappdata%\qBittorrent\nova3\engines\`
-- Mac: `~/Library/Application Support/qBittorrent/nova3/engines/`
+- Mac: `~/Library/Application\ Support/qBittorrent/nova3/engines/`
 - Linux: `~/.local/share/qBittorrent/nova3/engines/`
 
 _Yarrr!_
