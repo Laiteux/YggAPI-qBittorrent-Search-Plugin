@@ -1,4 +1,4 @@
-#VERSION: 1.1
+#VERSION: 1.2
 #AUTHORS: Laiteux (matt@laiteux.dev)
 
 import json
@@ -55,7 +55,7 @@ class yggapi(object):
                     "seeds": torrent["seeders"],
                     "leech": torrent["leechers"],
                     "engine_url": self.url,
-                    "desc_link": f"{self.ygg_url}/torrent/filmvidéo/{self.ygg_categories[str(torrent['category_id'])]}/{torrent['id']}-{torrent['slug']}",
+                    "desc_link": torrent["link"],
                     "pub_date": int(datetime.strptime(torrent["uploaded_at"], "%Y-%m-%dT%H:%M:%S%z").timestamp())
                 }
 
