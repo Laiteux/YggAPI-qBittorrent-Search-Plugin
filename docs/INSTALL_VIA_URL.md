@@ -14,10 +14,10 @@ qBittorrent can install and auto-update plugins directly from GitHub URLs!
 6. Paste this URL:
 
 ```
-https://raw.githubusercontent.com/OWNER_USERNAME/YggAPI-qBittorrent-Search-Plugin/main/yggapi.py
+https://raw.githubusercontent.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/main/yggapi.py
 ```
 
-**Replace `OWNER_USERNAME`** with the actual GitHub repository owner.
+**Replace `Laiteux`** with the actual GitHub repository owner.
 
 ### Step 2: Configure Your Passkey
 
