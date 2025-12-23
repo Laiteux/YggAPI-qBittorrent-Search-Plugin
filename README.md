@@ -9,7 +9,6 @@ This [qBittorrent](https://github.com/qbittorrent/qBittorrent) Search Plugin use
 - **[Installation Guide](docs/INSTALL_VIA_URL.md)** - URL installation with auto-update
 - **[Testing Guide](docs/TEST_GUIDE.md)** - Complete testing documentation
 - **[Configuration Examples](examples/)** - Setup scripts and templates
-- **[Project Structure](PROJECT_STRUCTURE.md)** - Project architecture
 
 ## 📂 Quick Links
 
@@ -55,7 +54,7 @@ This [qBittorrent](https://github.com/qbittorrent/qBittorrent) Search Plugin use
 
 ✅ **Benefits**: One-click install, automatic updates, passkey preserved on updates!
 
-📖 **Detailed Guide**: See [INSTALL_VIA_URL.md](INSTALL_VIA_URL.md)
+📖 **Detailed Guide**: See [INSTALL_VIA_URL.md](/docs/INSTALL_VIA_URL.md)
 
 ---
 
