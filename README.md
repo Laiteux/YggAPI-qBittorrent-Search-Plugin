@@ -2,7 +2,7 @@
 
 This [qBittorrent](https://github.com/qbittorrent/qBittorrent) Search Plugin uses [YggAPI](https://yggapi.eu), a non-official [YggTorrent](https://www.yggtorrent.org) search database.
 
-![Demo GIF](https://raw.githubusercontent.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/main/assets/demo.gif)
+![Demo GIF](https://raw.githubusercontent.com/Sterbweise/YggAPI-qBittorrent-Search-Plugin/main/assets/demo.gif)
 
 ## 📚 Documentation
 
