@@ -2,7 +2,7 @@
 
 Complete testing guide for the YggAPI qBittorrent Search Plugin.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Test Structure](#test-structure)
@@ -13,29 +13,31 @@ Complete testing guide for the YggAPI qBittorrent Search Plugin.
 
 ---
 
-## 🎯 Overview
+## Overview
 
 The test suite follows Python best practices and testing principles:
 
-- ✅ **Isolated Tests** - Each test runs independently with no shared state
-- ✅ **Mocked Dependencies** - No actual network calls or file I/O
-- ✅ **Clear Naming** - Descriptive test names following convention
-- ✅ **Comprehensive Coverage** - Tests for success, failure, and edge cases
-- ✅ **DRY Principle** - Reusable fixtures and helper methods
-- ✅ **SOLID Principles** - Well-organized, maintainable test code
+- **Isolated Tests** - Each test runs independently with no shared state
+- **Mocked Dependencies** - No actual network calls or file I/O
+- **Clear Naming** - Descriptive test names following convention
+- **Comprehensive Coverage** - Tests for success, failure, and edge cases
+- **DRY Principle** - Reusable fixtures and helper methods
+- **SOLID Principles** - Well-organized, maintainable test code
 
 ---
 
-## 🏗️ Test Structure
+## Test Structure
 
 ### Test Classes
 
 The test suite is organized into 6 main test classes:
 
 #### 1. **TestYggAPIConfig**
+
 Tests for configuration management class.
 
 **Tests:**
+
 - API configuration values
 - Category mappings (60+ categories)
 - Default settings validation
@@ -44,9 +46,11 @@ Tests for configuration management class.
 **Methods Tested:** All configuration constants and mappings
 
 #### 2. **TestURLCache**
+
 Tests for URL caching functionality.
 
 **Tests:**
+
 - Cache initialization
 - Saving and retrieving URLs
 - Cache expiration logic
@@ -54,25 +58,31 @@ Tests for URL caching functionality.
 - File I/O error handling
 
 **Methods Tested:**
+
 - `get_cached_url()`
 - `save_url()`
 
 #### 3. **TestYggURLFetcher**
+
 Tests for YggTorrent URL discovery.
 
 **Tests:**
+
 - Fetching URL from various HTML patterns
 - Cache integration
 - Fallback mechanisms
 - Error handling
 
 **Methods Tested:**
+
 - `get_ygg_url()`
 
 #### 4. **TestYggapiMainClass**
+
 Tests for main search plugin class.
 
 **Tests:**
+
 - Plugin initialization
 - URL building
 - Category resolution
@@ -82,6 +92,7 @@ Tests for main search plugin class.
 - Download link generation
 
 **Methods Tested:**
+
 - `search()`
 - `_build_search_url()`
 - `_resolve_category_id()`
@@ -94,18 +105,22 @@ Tests for main search plugin class.
 - `get_category_count()` (static)
 
 #### 5. **TestIntegration**
+
 Integration tests for complete workflows.
 
 **Tests:**
+
 - Complete search workflow
 - Single page results
 - Multiple page results
 - Empty result handling
 
 #### 6. **TestEdgeCases**
+
 Tests for edge cases and error conditions.
 
 **Tests:**
+
 - Empty queries
 - Special characters
 - Invalid data
@@ -114,7 +129,7 @@ Tests for edge cases and error conditions.
 
 ---
 
-## 🚀 Running Tests
+## Running Tests
 
 ### Prerequisites
 
@@ -178,35 +193,39 @@ success = run_test_suite()
 
 ### Coverage Summary
 
-| Component | Tests | Coverage |
-|-----------|-------|----------|
-| YggAPIConfig | 11 tests | 100% |
-| URLCache | 9 tests | 100% |
-| YggURLFetcher | 9 tests | 100% |
-| yggapi (Main) | 25 tests | 95%+ |
-| Integration | 3 tests | Full workflow |
-| Edge Cases | 6 tests | Comprehensive |
-| **TOTAL** | **63 tests** | **~95%** |
+| Component     | Tests        | Coverage      |
+| ------------- | ------------ | ------------- |
+| YggAPIConfig  | 11 tests     | 100%          |
+| URLCache      | 9 tests      | 100%          |
+| YggURLFetcher | 9 tests      | 100%          |
+| yggapi (Main) | 25 tests     | 95%+          |
+| Integration   | 3 tests      | Full workflow |
+| Edge Cases    | 6 tests      | Comprehensive |
+| **TOTAL**     | **63 tests** | **~95%**      |
 
 ### What's Tested
 
 ✅ **Configuration Management**
+
 - All config constants
 - Category mappings (60+)
 - Default values
 
 ✅ **URL Caching**
+
 - Save/retrieve operations
 - Expiration logic
 - Error handling
 
 ✅ **URL Discovery**
+
 - Multiple HTML patterns
 - Meta tag extraction
 - JSON parsing
 - Fallback mechanisms
 
 ✅ **Search Functionality**
+
 - Query building
 - Category resolution
 - Pagination
@@ -214,17 +233,20 @@ success = run_test_suite()
 - Error recovery
 
 ✅ **Data Parsing**
+
 - Date formats
 - Size formatting
 - Type validation
 
 ✅ **Error Handling**
+
 - Network failures
 - Invalid data
 - File I/O errors
 - JSON decode errors
 
 ✅ **Edge Cases**
+
 - Empty inputs
 - Special characters
 - Boundary conditions
@@ -232,18 +254,20 @@ success = run_test_suite()
 ### What's NOT Tested
 
 ⚠️ **External Dependencies**
+
 - Actual qBittorrent `helpers` module
 - Actual qBittorrent `novaprinter` module
 - Real network calls (all mocked)
 - Real file system operations (temp files used)
 
 ⚠️ **UI/UX**
+
 - qBittorrent interface integration
 - User interactions
 
 ---
 
-## 📝 Writing New Tests
+## Writing New Tests
 
 ### Test Naming Convention
 
@@ -255,6 +279,7 @@ def test_<component>_<scenario>_<expected_result>(self):
 ```
 
 **Examples:**
+
 ```python
 def test_cache_returns_none_when_expired(self):
     """Test that cache returns None when cache is expired"""
@@ -271,10 +296,10 @@ def test_example(self):
     # ARRANGE - Set up test data and mocks
     mock_data = {"test": "data"}
     self.mock_function.return_value = mock_data
-    
+
     # ACT - Execute the code under test
     result = self.component.method()
-    
+
     # ASSERT - Verify the results
     self.assertEqual(result, expected_value)
     self.mock_function.assert_called_once()
@@ -285,12 +310,12 @@ def test_example(self):
 ```python
 class TestMyComponent(unittest.TestCase):
     """Test suite for MyComponent"""
-    
+
     def setUp(self):
         """Set up test fixtures - runs before EACH test"""
         self.temp_dir = tempfile.mkdtemp()
         self.component = MyComponent()
-    
+
     def tearDown(self):
         """Clean up test fixtures - runs after EACH test"""
         if os.path.exists(self.temp_dir):
@@ -304,9 +329,9 @@ class TestMyComponent(unittest.TestCase):
 def test_with_mock(self, mock_retrieve):
     """Test with mocked network call"""
     mock_retrieve.return_value = "test response"
-    
+
     result = self.fetcher.get_data()
-    
+
     mock_retrieve.assert_called_once_with("expected_url")
     self.assertEqual(result, "processed response")
 ```
@@ -333,7 +358,7 @@ def test_fails_gracefully_on_error(self):
 
 ---
 
-## 🎯 Best Practices
+## Best Practices
 
 ### DO ✅
 
@@ -355,54 +380,6 @@ def test_fails_gracefully_on_error(self):
 5. **Don't skip cleanup** - Always clean up temp files/resources
 6. **Don't make tests depend on order** - Each test should run standalone
 7. **Don't test third-party code** - Only test your own code
-
----
-
-## 🔄 Continuous Integration
-
-### GitHub Actions Example
-
-```yaml
-name: Run Tests
-
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.6, 3.7, 3.8, 3.9, '3.10', '3.11']
-    
-    steps:
-    - uses: actions/checkout@v2
-    
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    
-    - name: Run tests
-      run: |
-        python -m unittest test_yggapi.py -v
-```
-
-### Pre-commit Hook
-
-Add to `.git/hooks/pre-commit`:
-
-```bash
-#!/bin/bash
-echo "Running tests before commit..."
-python -m unittest test_yggapi.py
-
-if [ $? -ne 0 ]; then
-    echo "Tests failed! Commit aborted."
-    exit 1
-fi
-
-echo "All tests passed!"
-```
 
 ---
 
@@ -475,7 +452,7 @@ def test_example(self):
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 - [Python unittest Documentation](https://docs.python.org/3/library/unittest.html)
 - [unittest.mock Documentation](https://docs.python.org/3/library/unittest.mock.html)
@@ -484,7 +461,7 @@ def test_example(self):
 
 ---
 
-## 🎓 Test Principles Used
+## Test Principles Used
 
 ### FIRST Principles
 
@@ -511,4 +488,3 @@ def test_example(self):
 **Happy Testing! 🧪**
 
 _Make it work, make it right, make it fast - in that order._
-

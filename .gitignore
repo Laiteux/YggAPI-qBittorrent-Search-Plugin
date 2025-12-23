@@ -1,6 +1,13 @@
 # Passkey configuration (NEVER commit your passkey!)
 yggapi_passkey.txt
 
+# Temporary files
+*.patch
+*.diff
+*.bak
+*.tmp
+*.temp
+
 # Python cache
 __pycache__/
 *.py[cod]

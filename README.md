@@ -2,7 +2,21 @@
 
 This [qBittorrent](https://github.com/qbittorrent/qBittorrent) Search Plugin uses [YggAPI](https://yggapi.eu), a non-official [YggTorrent](https://www.yggtorrent.org) search database.
 
-![Demo GIF](https://raw.githubusercontent.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/main/demo.gif)
+![Demo GIF](https://raw.githubusercontent.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/main/assets/demo.gif)
+
+## 📚 Documentation
+
+- **[Installation Guide](docs/INSTALL_VIA_URL.md)** - URL installation with auto-update
+- **[Testing Guide](docs/TEST_GUIDE.md)** - Complete testing documentation
+- **[Configuration Examples](examples/)** - Setup scripts and templates
+- **[Project Structure](PROJECT_STRUCTURE.md)** - Project architecture
+
+## 📂 Quick Links
+
+- 🔧 [Configuration Examples](examples/)
+- 🧪 [Test Suite](tests/) (64 tests)
+- 📖 [Documentation](docs/)
+- 🎬 [Assets](assets/)
 
 ## Features
 
@@ -263,3 +277,53 @@ See **TEST_GUIDE.md** for complete testing documentation.
 
 - Your passkey must be valid and from an active YggTorrent account
 - Get your passkey from: https://www.yggtorrent.org/user/account
+
+---
+
+## 📂 Project Structure
+
+```
+YggAPI-qBittorrent-Search-Plugin/
+├── yggapi.py                # Main plugin (must be in root)
+├── yggapi.ico               # Plugin icon
+├── README.md                # This file
+├── PROJECT_STRUCTURE.md     # Detailed structure documentation
+├── docs/                    # Documentation
+│   ├── INSTALL_VIA_URL.md
+│   ├── TEST_GUIDE.md
+│   └── TESTING_QUICKREF.md
+├── tests/                   # Test suite (64 tests)
+│   ├── test_yggapi.py
+│   └── test_yeeti_url_fetch.py
+├── examples/                # Configuration examples & scripts
+│   ├── README.md
+│   └── yggapi_passkey.example.txt
+└── assets/                  # Media files
+    └── demo.gif
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch
+3. Add tests for new functionality
+4. Update documentation
+5. Submit a pull request
+
+---
+
+## 🙏 Credits
+
+- **Original Author:** [Laiteux](https://github.com/Laiteux) (matt@laiteux.dev)
+- **Contributors:** [Sterbweise](https://github.com/Sterbweise) (contact@sterbweise.dev)
+- **YggAPI Service:** https://yggapi.eu
+- **YggTorrent:** https://www.yggtorrent.org
+- **URL Tracking:** https://yeeti.io/@ygg
+
+---
+
+**Version:** 2.0 | **Tests:** 64/64 passing ✅ | **Categories:** 60+
