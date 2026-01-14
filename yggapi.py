@@ -51,7 +51,7 @@ class yggapi(object):
                 result = {
                     "link": f"{self.url}/torrent/{torrent['id']}/download?passkey={self.passkey}",
                     "name": torrent["title"],
-                    "size": torrent["size"],
+                    "size": str(torrent["size"]),
                     "seeds": torrent["seeders"],
                     "leech": torrent["leechers"],
                     "engine_url": self.url,
