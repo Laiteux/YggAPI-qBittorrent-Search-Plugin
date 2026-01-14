@@ -9,8 +9,8 @@ from novaprinter import prettyPrinter
 class yggapi(object):
     name = "YggAPI"
     url = "https://yggapi.eu"
-    ygg_url = "https://www.yggtorrent.top"
-    passkey = "YOUR_PASSKEY_HERE" # https://www.yggtorrent.top/user/account
+    ygg_url = "https://www.yggtorrent.org"
+    passkey = "YOUR_PASSKEY_HERE" # https://www.yggtorrent.org/user/account
 
     supported_categories = {
         "all": "",
