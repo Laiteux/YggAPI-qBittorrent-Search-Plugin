@@ -2,6 +2,7 @@
 #AUTHORS: Laiteux (matt@laiteux.dev)
 
 import json
+import os
 from datetime import datetime
 from helpers import retrieve_url
 from novaprinter import prettyPrinter
@@ -31,6 +32,20 @@ class yggapi(object):
         self.max_page = 0 # 0 = unlimited
         self.per_page = 100
         self.order_by = "seeders"
+
+        # Load passkey from environment variable or file if provided
+        env_passkey = os.getenv('YGG_PASSKEY')
+        passkey_file = os.getenv('YGG_PASSKEY_FILE')
+        if passkey_file:
+            try:
+                with open(passkey_file, 'r') as f:
+                    self.passkey = f.read().strip()
+            except (IOError, OSError):
+                # If file can't be read, fall back to env var or class default
+                if env_passkey is not None:
+                    self.passkey = env_passkey
+        elif env_passkey is not None:
+            self.passkey = env_passkey
 
     def search(self, what, cat="all"):
         category_param = ""
