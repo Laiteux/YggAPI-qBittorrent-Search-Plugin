@@ -8,7 +8,11 @@ This [qBittorrent](https://github.com/qbittorrent/qBittorrent) Search Plugin use
 
 1. Download the plugin file: [yggapi.py](https://github.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/blob/main/yggapi.py#L13)
 
-2. Replace the `passkey` value on [line 13](https://github.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/blob/main/yggapi.py#L13) with your [YggTorrent Passkey](https://www.yggtorrent.org/user/account) _(required for downloading)_
+2. Set your [YggTorrent Passkey](https://www.yggtorrent.org/user/account) using one of the following methods _(required for downloading)_:
+
+   - **Direct Edit**: Replace the `passkey` value on [line 13](https://github.com/Laiteux/YggAPI-qBittorrent-Search-Plugin/blob/main/yggapi.py#L13) with your [YggTorrent Passkey](https://www.yggtorrent.org/user/account) _(required for downloading)_
+   - **Environment Variable**: Set `YGG_PASSKEY` to your passkey value
+   - **File**: Set `YGG_PASSKEY_FILE` to the path of a file containing your passkey
 
 Then, in qBittorrent:
 
